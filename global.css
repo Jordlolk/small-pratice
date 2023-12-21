@@ -1,0 +1,22 @@
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.menu{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.menu-item a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 0;
+    
+}
+.menu-item a:hover{
+    font-weight: 900;
+    transition: 0.4s ease-in-out;
+}
