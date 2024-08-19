@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --textH: rgba(228, 228, 228, 0.842);
+  --link: white;
+  --background: rgb(61, 61, 61);
+}
+
+body {
+  background-color: rgb(61, 61, 61);
+}
+img {
+  cursor: pointer;
+}
+
+p,
+a,
+span,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+}
+
+a {
+  color: var(--link);
+  font-family: monospace;
+  cursor: pointer;
+}
+
+h1 {
+  color: rgba(228, 228, 228, 0.842);
+}
