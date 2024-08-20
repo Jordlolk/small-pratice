@@ -1,5 +1,23 @@
 
-import { countries } from "./countries.js" ;
+const countries = [
+    {
+        name : 'Brazil' ,
+        image : '../images/brazil/Brazil.jpg'
+    },
+    {
+        name : 'Italia' ,
+        image : '../images/italia/italia.jpg'
+    },
+    {
+        name : 'Canada' ,
+        image : '../images/canada/canada.jpg'
+    },
+    {
+        name : 'Paris' ,
+        image : '../images/franca/France.jpg'
+    }
+]
+
 
 const input_text = document.getElementById('inputText').value,
 result = document.getElementById('result'),
@@ -10,9 +28,9 @@ const test = document.getElementById('teste')
 const IMGSHTML = countries.map((count , index) => {
         return `<div class="imgs">
         <img id="teste" class="img" src="${count.image}" alt="${count.name}">
-        <button class="imgs-button" draggable="false">${count.name}-${index}</button>
+        <button class="imgs-button" draggable="false">${count.name}</button>
         </div>`
-})
+}).join('')
 
 const menuImgs = document.getElementById('imgs-menuJs')
 menuImgs.innerHTML = IMGSHTML
@@ -29,12 +47,11 @@ function inputEventText(e){
     imagens.filter((img) => {
         const nomePais = img.firstElementChild.alt.toLowerCase()
 
-       if(!nomePais.includes(e.target.value.toLowerCase())){
-           result.innerHTML = "Sorry, maybe the img is not in my data-base "
-           img.style.cssText = "display:none;"
-       } else {
-           result.innerHTML = ""
+       if(nomePais.startsWith(e.target.value.toLowerCase())){
            img.style.cssText = "display: flex;"
+       }
+       else{
+           img.style.cssText = "display: none;"
        }
     });
 }

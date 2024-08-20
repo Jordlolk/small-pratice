@@ -5,14 +5,28 @@
 }
 
 :root {
-  --textH: rgba(228, 228, 228, 0.842);
-  --link: white;
-  --background: rgb(61, 61, 61);
+  --16px: 1em;
+  --22px: 1.5em;
+  --32px: 2em;
+  --48px: 3em;
+  --textH: rgb(255, 255, 255);
+  --link: rgb(0, 0, 0);
+  --background: rgb(223, 223, 223);
+  --backgroundContent: rgb(0, 33, 94);
+  --backgroundButtons: rgb(0, 56, 73);
+  --texts: rgb(0, 255, 234);
+  --padding: 14px;
+  --padMenu: 8px;
 }
 
 body {
-  background-color: rgb(61, 61, 61);
+  background-color: var(--background);
 }
+
+nav {
+  padding: 18px;
+}
+
 img {
   cursor: pointer;
 }
@@ -27,6 +41,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: bold;
   font-family: sans-serif;
 }
 
@@ -36,6 +51,39 @@ a {
   cursor: pointer;
 }
 
-h1 {
-  color: rgba(228, 228, 228, 0.842);
+h1, input::placeholder, input{
+  color: var(--textH);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  li {
+    list-style: none;
+  }
+}
+
+.menu a {
+  color: var(--link);
+  padding: var(--padMenu);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: clamp(16px, 2vw, 18px);
+  position: relative;
+}
+
+.menu a::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  transition: width 0.4s ease-in-out;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--link);
+}
+
+.menu a:hover::after {
+  width: 100%;
 }
